@@ -1,4 +1,4 @@
-# AoC-2022#
+# AoC-2022
 Advent of Code solutions 2022
 This repository contains my puzzle solutions for Advent of Code 2022 in Python.
 !WARNING: I am a Python noob o.O!
