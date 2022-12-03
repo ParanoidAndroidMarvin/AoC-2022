@@ -18,16 +18,10 @@ def solve_part1(rucksacks):
 
 def solve_part2(rucksacks):
     total_priority = 0
-    rucksack_iterator = iter(rucksacks)
-    try:
-        while True:
-            group = []
-            for i in range(3):
-                group.append(next(rucksack_iterator))
-            badge = set(group[0]).intersection(group[1], group[2]).pop()
-            total_priority += get_priority(badge)
-    except StopIteration:
-        pass
+    groups = list(zip(*[iter(rucksacks)] * 3))
+    for group in groups:
+        badge = set(group[0]).intersection(group[1], group[2]).pop()
+        total_priority += get_priority(badge)
     return total_priority
 
 
