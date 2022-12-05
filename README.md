@@ -1,7 +1,7 @@
 # AoC-2022
 Advent of Code solutions 2022
 This repository contains my puzzle solutions for Advent of Code 2022 in Python.
-!WARNING: I am a Python noob o.O!
+!!! WARNING: I am a Python noob o.O !!!
 
 # Get Started
 1. Create local.py in project root and add your AOC session key in that file:
