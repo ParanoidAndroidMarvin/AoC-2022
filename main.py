@@ -2,13 +2,14 @@ from os import system
 
 import keyboard
 
-from puzzles import calorie_counting, rock_paper_scissors, rucksack_reorganization
+from puzzles import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup
 
 selected = 1
 puzzles = [
     "Calorie Counting",
     "Rock Paper Scissors",
-    "Rucksack Reorganization"
+    "Rucksack Reorganization",
+    "Camp Cleanup"
 ]
 
 
@@ -51,6 +52,8 @@ def select():
             rock_paper_scissors.solve()
         case 3:
             rucksack_reorganization.solve()
+        case 4:
+            camp_cleanup.solve()
 
 
 show_menu()
