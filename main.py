@@ -3,7 +3,7 @@ from os import system
 import keyboard
 
 from puzzles import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, supply_stacks, \
-    tuning_trouble
+    tuning_trouble, no_space_left_on_device
 
 selected = 1
 puzzles = [
@@ -12,7 +12,8 @@ puzzles = [
     "Rucksack Reorganization",
     "Camp Cleanup",
     "Supply Stacks",
-    "Tuning Trouble"
+    "Tuning Trouble",
+    "No Space Left On Device"
 ]
 
 
@@ -61,6 +62,8 @@ def select():
             supply_stacks.solve()
         case 6:
             tuning_trouble.solve()
+        case 7:
+            no_space_left_on_device.solve()
 
 
 show_menu()
