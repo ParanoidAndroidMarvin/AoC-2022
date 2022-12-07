@@ -1,11 +1,12 @@
 from os import system
-
 import keyboard
+import time
 
 from puzzles import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, supply_stacks, \
     tuning_trouble, no_space_left_on_device
 
 selected = 1
+in_menu = True
 puzzles = [
     "Calorie Counting",
     "Rock Paper Scissors",
@@ -22,6 +23,9 @@ def clear():
 
 
 def show_menu():
+    global in_menu
+    in_menu = True
+
     clear()
     print('AdventOfCode')
     print('=================')
@@ -35,20 +39,30 @@ def show_menu():
 
 
 def up():
-    global selected
-    selected = max(1, selected - 1)
-    show_menu()
+    if in_menu:
+        global selected
+        selected = max(1, selected - 1)
+        show_menu()
 
 
 def down():
-    global selected
-    selected = min(len(puzzles), selected + 1)
-    show_menu()
+    if in_menu:
+        global selected
+        selected = min(len(puzzles), selected + 1)
+        show_menu()
 
 
 def select():
-    print('\n\nPuzzle result day {0}:'.format(selected))
+    global in_menu
+    if not in_menu:
+        return
+    in_menu = False
+
+    clear()
+    print('Puzzle result day {0}:'.format(selected))
     print('---------------------------')
+
+    start = time.time()
     match selected:
         case 1:
             calorie_counting.solve()
@@ -64,6 +78,9 @@ def select():
             tuning_trouble.solve()
         case 7:
             no_space_left_on_device.solve()
+    stop = time.time()
+    print('\nExecution time: {}s'.format(round(stop-start, 3)))
+    print('\n[<--]Show Menu [esc]Exit')
 
 
 show_menu()
