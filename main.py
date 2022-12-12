@@ -3,7 +3,7 @@ import keyboard
 import time
 
 from puzzles import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, supply_stacks, \
-    tuning_trouble, no_space_left_on_device
+    tuning_trouble, no_space_left_on_device, treetop_tree_house
 
 selected = 1
 in_menu = True
@@ -14,7 +14,8 @@ puzzles = [
     "Camp Cleanup",
     "Supply Stacks",
     "Tuning Trouble",
-    "No Space Left On Device"
+    "No Space Left On Device",
+    "Treetop Tree House"
 ]
 
 
@@ -78,6 +79,8 @@ def select():
             tuning_trouble.solve()
         case 7:
             no_space_left_on_device.solve()
+        case 8:
+            treetop_tree_house.solve()
     stop = time.time()
     print('\nExecution time: {}s'.format(round(stop-start, 3)))
     print('\n[<--]Show Menu [esc]Exit')
