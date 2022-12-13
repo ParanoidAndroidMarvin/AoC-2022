@@ -22,7 +22,7 @@ def trace_tail(moves, length):
                 new_position = move_tail(knots[j - 1], knots[j])
                 if knots[j] == new_position:
                     break
-                knots[j] = move_tail(knots[j - 1], knots[j])
+                knots[j] = new_position
             tail_positions.add(knots[length - 1])
     return len(tail_positions)
 
