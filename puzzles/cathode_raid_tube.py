@@ -35,6 +35,3 @@ def draw_pixel(cycle, current, display):
     column = (cycle - 1) % 40
     display[row] += '#' if column - 1 <= current <= column + 1 else '.'
     return display
-
-
-solve()
