@@ -3,7 +3,7 @@ import keyboard
 import time
 
 from puzzles import calorie_counting, rock_paper_scissors, rucksack_reorganization, camp_cleanup, supply_stacks, \
-    tuning_trouble, no_space_left_on_device, treetop_tree_house, rope_bridge, cathode_raid_tube
+    tuning_trouble, no_space_left_on_device, treetop_tree_house, rope_bridge, cathode_raid_tube, monkey_in_the_middle
 
 selected = 1
 in_menu = True
@@ -17,7 +17,8 @@ puzzles = [
     "No Space Left On Device",
     "Treetop Tree House",
     "Rope Bridge",
-    "Cathode-Raid Tube"
+    "Cathode-Raid Tube",
+    "Monkey in the Middle"
 ]
 
 
@@ -87,6 +88,8 @@ def select():
             rope_bridge.solve()
         case 10:
             cathode_raid_tube.solve()
+        case 11:
+            monkey_in_the_middle.solve()
     stop = time.time()
     print('\nExecution time: {}s'.format(round(stop-start, 3)))
     print('\n[<--]Show Menu [esc]Exit')
